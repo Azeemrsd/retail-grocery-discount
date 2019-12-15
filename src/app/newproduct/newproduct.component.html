@@ -1,0 +1,72 @@
+<div class="head">
+  <!-- Dropdown for selecting type of customer -->
+  <select
+    name="customer"
+    id="customer"
+    required
+    (change)="selected($event.target.value)"
+    [(ngModel)]="customerType"
+  >
+    <option value="Select Any One" disabled selected>Select Any One</option>
+    <option value="New Customer" id="option">New Customer</option>
+    <option value="Employee" id="option">Employee</option>
+    <option value="Affiliate" id="option">Affiliate</option>
+    <option value="2 year old" id="option">2 year Old customer</option>
+  </select>
+  <!-- Dropdown Ends -->
+
+  <!-- Displaying currently selected customer type -->
+  <p>{{ customerType }}</p>
+
+  <!-- Add product textbox -->
+  <label for="add-product">Add Product </label>
+  <input
+    [(ngModel)]="product"
+    type="text"
+    value="product"
+    class="product"
+    pattern="[A-Za-z]"
+  />
+  <label for="price">Price</label>
+  <input
+    type="number"
+    pattern="[0-9]{3}"
+    [(ngModel)]="price"
+    value="price"
+    class="price"
+    required
+  />
+  <!-- Add product Button -->
+  <button
+    (click)="onProductAdded()"
+    class="addProduct"
+    [disabled]="product !== '' && price !== null && price > 0 ? false : true"
+  >
+    Add Product
+  </button>
+  <!-- Purchased Itmes -->
+  <h2>Purchased Items</h2>
+  <div class="cart" *ngFor="let product of products">
+    <h3 style="display: inline; margin:10px">
+      Product Name: {{ product.product }}
+    </h3>
+
+    <h3 style="display: inline;">Product Price: {{ product.price }}</h3>
+    <!-- Delete Product Button -->
+    <button (click)="onDeleteProduct(product.id)" class="deleteProduct">
+      Delete product
+    </button>
+    <!-- Edit Product Button -->
+    <button (click)="onEditProduct(product.id)" class="editProduct">
+      Edit product
+    </button>
+  </div>
+  <div>
+    <!-- displaying total price total discount and netpayable amount -->
+    <div>
+      <h3 class="amount">Total Price:{{ totalPrice }}</h3>
+      <h3 class="amount">Total Discount:{{ totalDiscount }}</h3>
+      <h3 class="amount">Net Payable Amount:{{ payableAmount }}</h3>
+    </div>
+  </div>
+</div>

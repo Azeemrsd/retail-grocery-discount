@@ -1,0 +1,66 @@
+/* Head div styles for centering everyting */
+.head {
+  margin: auto;
+  text-align: center;
+}
+/* Add product text box styles  */
+.product {
+  height: 1.8rem;
+  border-radius: 5px;
+  border: 1px solid blue;
+  outline: none;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+/* Price number field styles */
+.price {
+  height: 1.8rem;
+  border-radius: 5px;
+  border: 1px solid blue;
+  outline: none;
+  width: 5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+/* Buttons style */
+.addProduct,
+.deleteProduct,
+.editProduct {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #8cec8c;
+  outline: none;
+  cursor: pointer;
+}
+/* Button hover */
+.addProduct:hover {
+  background-color: red;
+  color: white;
+}
+/* Disabled button styles */
+.addProduct:disabled {
+  cursor: not-allowed;
+  background-color: #8cec8c;
+  color: black;
+}
+/* Dropdown styles */
+#customer {
+  height: 1.8rem;
+  border-radius: 5px;
+  border: 1px solid blue;
+}
+/* Removing increment and decrement icons from a number type input field */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+/* Total Amount, Total discount and net payable amount style */
+.amount {
+  display: inline-block;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: red;
+  color: white;
+}
